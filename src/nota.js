@@ -5,8 +5,8 @@
     Nota.version = '0.0.2';
     Nota.compatibleVersions = ['0.0.1','0.0.2'];
     Nota.NotaJSCompatible = true;
-    Nota.versionCode = 'Not a Step';
-    Nota.fuckCode = 'XQ';
+    Nota.versionCode = 'Favonius';
+    Nota.fuckCode = 'HJD';
 
     Nota.__extract = {};
     Nota.__root = 'Nota ROOT';
