@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="src/nota.js"></script>
+    <title>Intro. NotaJS</title>
+</head>
+<body>
+    <h1>NotaJS</h1>
+    <p>Not a JS Tool. Created by JybarDevel@arch.</p>
+    <p>Do not disturb the author unless you would like to disturb her.</p>
+    <hr>
+    <pre>
+        Do you know?
+        I don't know.
+        ---
+        Nota.Q : Query Selector
+            use it like document.querySelectorAll,
+            if only 1 element is selected, it will return the element
+            else it returns Array[element]
+            Option:
+                pass true as 2nd parameter to force Array[element] as the result, though only 1 selected.
+        Nota.C : Element Creator
+            see source code.
+        Nota.O : ref->console.log
+            O('fuck you') is equal to console.log('fuck you')
+        ---
+        NOTE:
+            First Nota.unsafe.extract() to use these Abbrs globally.
+    </pre>
+    <hr>
+    <pre id='mount_j'>
+    <span>Object NotaJS</span>
+    </pre>
+</body>
+<style>
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    sc{
+        margin: 4px;
+    }
+</style>
+<script>
+    Nota.unsafe.extract();
+    const rc = C();
+    const NDEC = new Nota.DEController(rc);
+    const SSs = {
+        'background-color':'rgb(80,80,80)',
+        'color':'white',
+        'padding':'8px',
+    };
+    const EQs = {
+        'mousedown':[
+            (e)=>{e.style.background='green'},
+            (el,e)=>{
+                SSs['background-color'] = 'rgb(50,50,0)'
+            }
+        ],
+        'mouseup':[
+            (e)=>{
+                NDEC.mountStyle();
+                NDEC.umountEvent();
+            }
+        ]
+    };
+    NDEC.setEQManager(new Nota.EQManager(EQs));
+    NDEC.setSSManager(new Nota.SSManager(SSs));
+    NDEC.mount(Q('#mount_j'),{e:true,s:true});
+    rc.innerHTML += Nota.experimental.JStringify(Nota,{hidden:['__root','__extract'],omitted:['fuckCode']})+'\n';
+    rc.innerHTML += Nota.experimental.JStringify(SSs)+'\n';
+    rc.innerHTML += Nota.experimental.JStringify(EQs)+'\n';
+</script>
+</html>
